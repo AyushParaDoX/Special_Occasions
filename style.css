@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.page1 h1,
+h2 {
+  font-family: "Cormorant Garamond", serif;
+}
+.page1 p,
+span,
+h3,
+h4,
+h5 {
+  /*font-family: "Montserrat", sans-serif;*/
+  font-family: "Hubot Sans", serif;
+}
+
+/* General body and navbar styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8ff;
+   scroll-behavior: smooth;
+}
+/* Hide scrollbar for all browsers */
+
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f8ff;
+}
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #f4f4f9; /* Navbar background color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Keep navbar above other content */
+}
+
+/* Logo styles */
+.navbar .logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Logo color */
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #000; /* Set a default color */
+  text-transform: uppercase;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color change */
+}
+
+/* Hover effect for the logo */
+.navbar .logo span:hover {
+  transform: scale(1.1); /* Increase the size by 10% on hover */
+}
+
+/* Navigation link styles */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Space between navigation items */
+}
+
+.nav-links li {
+  position: relative; /* Required for the underline effect */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000; /* White color for nav items */
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+/* For smooth scale transitions in navbar items */
+.navbar .nav-links a {
+  opacity: 1;
+  transform: translateY(30px);
+}
+
+.navbar .logo span {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+/* Hover effect: underline */
+.nav-links a:hover {
+  color: #0c090a; /* Color stays white */
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black; /* White underline */
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
+}
+
+.nav-links li:hover::after {
+  width: 100%; /* Expand width of the underline */
+  height: 3px; /* Slightly increase height of the underline */
+}
+
+/* Main content section */
+main {
+  margin-top: 50px; /* Offset content for the fixed navbar */
+}
+
+/* Background image container */
+
+/* Container styles */
+.page1{
+  display: flex; /* Use flexbox to arrange elements */
+  justify-content: space-between; /* Place elements on opposite sides */
+  align-items: center; /* Center elements vertically */
+  padding: 40px; /* Add padding to the container */
+  gap: 20px; /* Space between the elements */
+  width: 100%;
+  height: calc(
+    100vh - 80px
+  ); /* Adjust height to fit the screen minus the navbar height */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main content styles */
+.main-content {
+  max-width: 45%; /* Restrict the width of the content */
+  margin-left: 20px; /* Add a bit of margin if needed */
+  color: #000;
+}
+
+.main-content .heading {
+  font-size: 3rem; /* Adjust font size */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+
+.heading2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Adjust font size as needed */
+  color: #000; /* Optional: Set a text color */
+}
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    gap: 30px; /* Increase the space between elements */
+  }
+  .main-content,
+  .Background {
+    max-width: 100%; /* Make elements take full width */
+  }
+  .main-content .heading {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Main content styles */
+.main-content .heading {
+  font-size: 3.4rem; /* Adjust font size as needed */
+  font-weight: 780; /* Apply font weight 780 */
+  margin-bottom: 30px; /* Space below heading */
+}
+.describing {
+    font-size: 1.5rem; /* Increased font size for better readability */
+    line-height: 1.5; /* Increased line height for comfortable reading */
+    color: #333; /* Adjusted color for better visibility */
+    margin-bottom: 20px; /* Space below the text for better spacing */
+}
+.heading{
+    margin-left:60px;
+    color:black;
+}
+
+/* Keyframes for typewriter animation */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 65%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Typewriter animation for the heading */
+.heading {
+    overflow: hidden; /* Hides the overflow text until it is revealed */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    border-right: 3px solid #333; /* Creates the cursor effect */
+    font-size: 3rem; /* Adjust the font size as needed */
+    font-weight: 780; /* Adjust the font weight as needed */
+    animation: typewriter 4s steps(40, end) forwards, blink 0.7s step-end infinite;
+}
+/* Background image container styles */
+
+
+/* Container styles */
+.page1 {
+  display: flex; /* Use flexbox to arrange elements */
+  justify-content: space-between; /* Space elements evenly */
+  align-items: center; /* Center elements vertically */
+  padding: 40px; /* Add padding for spacing */
+  gap: 20px; /* Space between elements */
+  width: 100%;
+  height: calc(100vh - 80px); /* Full height minus the navbar height */
+  position: relative; /* Positioning context for the elements */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+/* Main content styles */
+.main-content {
+  max-width: 45%; /* Limit the width of the content */
+  color: #000; /* Ensure the text is visible against the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    gap: 30px; /* Increase the space between elements */
+  }
+  .main-content {
+    max-width: 100%; /* Make the content take full width on smaller screens */
+  }
+}
+
+.background{
+    position: relative;
+    margin-top: 10vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+
+.background .image1{
+    width: 60%;
+    height: 84%;
+    border-radius: 400px;
+    margin-left:4vw;
+}
+
+.background .image2{
+    height: 44%;
+    width: 50%;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+/* Navbar styles with drop shadow */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #f4f4f9; /* Navbar background color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Keep navbar above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft drop shadow */
+}
+
+/* Drop shadow on the images */
+.background .image1 {
+  width: 60%;
+  height: 84%;
+  border-radius: 400px;
+  margin-left: 4vw;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Drop shadow for image1 */
+}
+
+.background .image2 {
+  height: 44%;
+  width: 50%;
+  border-radius: 50px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow for image2 */
+}
+
+
+.background .image3{
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: 40%;
+  top: 46%;
+  left: 69%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+}
+.image3 img{
+   width: 100%; /* Scale the image to fit the circle */
+  height: 100%; /* Scale the image to fit the circle */
+  object-fit: cover; /* Make sure the image covers the entire circle */
+}
+
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid black;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+  /* animation: scroll-down 1s ease-in-out infinite; */
+}
+
+
+@keyframes scroll-down {
+  0% {
+    /* top:20%; */
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+.page2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #ececf2;
+  padding: 30px 33px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color:#000;
+}
+.page2-heading{
+  font-size: 4rem;
+  font-weight: 400;
+   font-family: "Cormorant Garamond", serif;
+}
+.page2 , p {
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Hubot Sans", serif;
+}
+.para{
+  width: 100%;
+  margin-top: 2%;
+  line-height: 1.6;
+  font-size: 2.7rem;
+  color: #333;
+  text-decoration: underline 2px;
+}
+
+.page2-heading {
+        font-size: 3.2rem;
+        display: inline-block;
+        border-right: 4px solid;
+        white-space: nowrap;
+        overflow: hidden;
+        animation-timeline: view();
+        animation: typewriter2 3s steps(30) 1s forwards;
+       
+    }
+
+    @keyframes typewriter2 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 24%; 
+        }
+    }
+
+    .para {
+        font-size: 2.6rem;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: scrollFade 2s ease-out 0.5s forwards;
+    }
+
+    @keyframes scrollFade {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+@keyframes linkAnimation{
+  to{
+    background-size: 100% 100%;
+  }
+}
+
+.facts {
+  padding: 13px 13px;
+  background-color: #d4d4dc;
+  width: 25%;
+  border-radius: 50px;
+  margin-top: 2.4%;
+}
+.facts a{
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
+.facts:hover {
+  background-color: black;
+  transition: 0.3s;
+}
+
+.facts:hover a {
+  color: white;
+  transition: 0.3s;
+}
+
+.facts:hover a::after {
+  width: 100%;
+  background-color: white;
+}
+.page3{
+  padding: 1.3vw 1vw;
+  width: 100%;
+  height: 100vh;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #d8d8dc;
+  color: #333;
+}
+
+.page3 .heading{
+   font-family: "Cormorant Garamond", serif;
+   font-weight: 500;
+   font-size: 3rem;
+   animation: typewriter3 3s steps(40) 1s forwards;
+}
+
+    @keyframes typewriter3 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 31%; 
+        }
+    }
+/* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 11px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.cta span a{
+  text-decoration: none;
+  color: #333;
+}
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+.para2{
+  font-size: 1.4rem;
+  padding: 1.3vw 2vw;
+}
+.head{
+  position: absolute;
+  text-decoration: underline;
+  left: 40%;
+}
+.images{
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+.images img{
+  width: 20%;
+  height: 30%;
+  margin-top: 5vw;
+  border-radius: 40px;
+  
+}
